@@ -142,9 +142,9 @@ a {
 
 .btn-primary:hover {
     background: #f2f2f2;
-    color: var(--primary); /* Cambia el color del texto */
-    transform: scale(1.05); /* Le da un pequeño efecto de "escala" al botón */
-    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4); /* Añadí una sombra más notoria */
+    color: var(--primary); 
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
 }
 
 
@@ -179,7 +179,7 @@ h2 {
     font-size: 1.1rem;
     color: #fff;
     transition: transform 0.3s ease, background 0.3s ease;
-    cursor: pointer; /* Cambia el cursor a pointer */
+    cursor: pointer;
 }
 
 .skill i {
@@ -191,7 +191,7 @@ h2 {
 
 .skill:hover {
     transform: translateY(-5px);
-    background: #444a66; /* Cambia el color de fondo al hacer hover */
+    background: #444a66;
 }
 
 .projects {
@@ -235,7 +235,7 @@ h2 {
 
 .copy-btn:hover {
     background: #007c91;
-    transform: scale(1.05); /* Efecto similar al del botón "¡Hablemos!" */
+    transform: scale(1.05);
 }
 
 footer {
