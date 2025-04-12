@@ -1,0 +1,275 @@
+:root {
+    --bg-dark: #1e1e2f;
+    --bg-light: #2a2a3d;
+    --text-light: #eeeeee;
+    --text-muted: #cccccc;
+    --primary: #00bcd4;
+    --accent: #0097a7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-light);
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px; /* Ajusta el tamaño de la imagen según tu preferencia */
+    height: auto;
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+
+.logo i {
+    color: var(--primary);
+    margin-right: 8px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: var(--text-light);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.nav-links li a:hover {
+    color: var(--primary);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero {
+    background: linear-gradient(135deg, #0097a7, #00bcd4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.hero span {
+    color: #fff700;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+.hero .btn-primary {
+    margin-top: 10px;
+    display: inline-block;
+    background: #fff;
+    color: var(--accent);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #f2f2f2;
+    color: var(--primary); /* Cambia el color del texto */
+    transform: scale(1.05); /* Le da un pequeño efecto de "escala" al botón */
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4); /* Añadí una sombra más notoria */
+}
+
+
+.section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.alt-bg {
+    background-color: var(--bg-light);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--primary);
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.skill {
+    background: #333c56;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #fff;
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer; /* Cambia el cursor a pointer */
+}
+
+.skill i {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    background: #444a66; /* Cambia el color de fondo al hacer hover */
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #2e2e3f;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.project:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.contact-info {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.copy-btn {
+    background: var(--primary);
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: #007c91;
+    transform: scale(1.05); /* Efecto similar al del botón "¡Hablemos!" */
+}
+
+footer {
+    background: #161625;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+  
+  .notification {
+    background-color: #00bcd4;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .notification.show {
+    opacity: 1;
+    transform: translateY(0);
+  }  

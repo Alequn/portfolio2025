@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alequn - Desarrollador Web</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome FREE CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+  <!-- Styles & Scripts -->
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">
+        <img src="img/logo.png" alt="Logo Alequn" width="40" height="40"> Alequn
+      </h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="inicio" class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h2><span>Hola, soy</span> Alexander Bentancur</h2>
+      <p>Desarrollador web profesional en Montevideo, Uruguay.</p>
+      <a href="#contacto" class="btn-primary">¡Hablemos!</a>
+    </div>
+  </section>
+
+  <section id="sobre-mi" class="section" data-aos="fade-right">
+    <h2>Sobre mí</h2>
+    <p>Soy Alexander, también conocido como <strong>Alequn</strong>, un desarrollador web de 22 años especializado en crear experiencias digitales modernas, funcionales y atractivas.</p>
+    <p>Actualmente formé parte del equipo de desarrollo web en <strong>Movistar Uruguay</strong>, donde contribuí a optimizar y rediseñar componentes clave del sitio corporativo y herramientas internas.</p>
+  </section>
+
+  <section id="habilidades" class="section alt-bg">
+    <h2 data-aos="fade-up">Habilidades</h2>
+    <div class="skills" data-aos="zoom-in">
+      <div class="skill"><i class="fab fa-html5"></i> HTML5</div>
+      <div class="skill"><i class="fab fa-css3-alt"></i> CSS3 / SASS</div>
+      <div class="skill"><i class="fab fa-js"></i> JavaScript (ES6+)</div>
+      <div class="skill"><i class="fab fa-react"></i> React / Next.js</div>
+      <div class="skill"><i class="fab fa-node-js"></i> Node.js / Express</div>
+      <div class="skill"><i class="fas fa-database"></i> MongoDB / Firebase</div>
+      <div class="skill"><i class="fab fa-git-alt"></i> Git / GitHub</div>
+      <div class="skill"><i class="fas fa-mobile-alt"></i> Diseño Responsivo</div>
+    </div>
+  </section>
+
+  <section id="proyectos" class="section" data-aos="fade-up">
+    <h2>Proyectos</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Portafolio Moderno</h3>
+        <p>Landing page con React y animaciones usando Framer Motion. Responsive y accesible.</p>
+      </div>
+      <div class="project">
+        <h3>App de Tareas</h3>
+        <p>To-do app con autenticación Firebase y Vue.js. UI elegante y funcionalidad offline.</p>
+      </div>
+      <div class="project">
+        <h3>Clon de Spotify</h3>
+        <p>Clon con reproductor interactivo en React y consumo de la API pública de Spotify.</p>
+      </div>
+      <div class="project">
+        <h3>Dashboard de Ventas</h3>
+        <p>Panel administrativo con estadísticas dinámicas, gráficos y autenticación con JWT.</p>
+      </div>
+      <div class="project">
+        <h3>API REST de Usuarios</h3>
+        <p>Back-end con Node.js, Express y MongoDB. Incluye validaciones, login y permisos.</p>
+      </div>
+      <div class="project">
+        <h3>Blog con CMS Headless</h3>
+        <p>Blog dinámico con Next.js, consumo desde Contentful y optimizado para SEO.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section alt-bg" data-aos="fade-up">
+    <h2>Contacto</h2>
+    <div class="contact-info">
+      <p><strong><i class="fas fa-map-marker-alt"></i> Ubicación:</strong> Montevideo, Uruguay</p>
+      <p><strong><i class="fas fa-phone"></i> Teléfono:</strong> <span id="telefono">+598 094054266</span> <button class="copy-btn" data-copy="+598 094054266">Copiar</button></p>
+      <p><strong><i class="fas fa-envelope"></i> Email:</strong> <span id="email">alexbentancur132@gmail.com</span> <button class="copy-btn" data-copy="alexbentancur132@gmail.com">Copiar</button></p>
+      <p><strong><i class="fas fa-user"></i> Edad:</strong> 22 años</p>
+    </div>
+  </section>
+
+  <!-- Contenedor de notificaciones desplazado abajo -->
+  <div id="notification-container"></div>
+
+  <footer>
+    <p>&copy; 2025 Alexander Bentancur - Alequn</p>
+  </footer>
+
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
