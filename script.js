@@ -14,10 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
   const notificationSound = new Audio('sounds/noti.mp3'); //Ruta de sonido
   notificationSound.volume = 0.2; // Volumen de la noti (1 max)
-
 
   function showNotification(message) {
     const notification = document.createElement("div");
@@ -41,6 +39,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   }
 
+  const hablarBtn = document.querySelector('.hero-content a'); // El botón "¡Hablemos!" tiene la etiqueta <a> dentro de .hero-content
+  if (hablarBtn) {
+    hablarBtn.addEventListener('click', () => {
+      const slideSound = new Audio('sounds/slide.mp3'); // Ruta de sonido
+      slideSound.play();
+    });
+  }
+
+  const navItems = document.querySelectorAll('.nav-links li'); // Seleccionamos todos los <li> de la barra de navegación
+  const clickSound = new Audio('sounds/click.mp3'); // Ruta del sonido
+
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      clickSound.play(); // Reproducir el sonido cuando se haga clic
+    });
+  });
+
   // Burbujas...
   const bubbleContainer = document.querySelector('.bubbles');
   const bubbleGenerationInterval = 100; // Intervalo en milisegundos para la creación de burbujas
@@ -59,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bubble.style.animationDelay = `${Math.random() * 5}s`;
 
     bubbleContainer.appendChild(bubble);
-    
+
     setTimeout(() => {
       bubble.remove();
     }, 16000);
@@ -95,4 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("mobile");
+    navLinks.classList.toggle("open");
+  });
+  
 });
