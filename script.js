@@ -39,75 +39,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   }
 
-  const hablarBtn = document.querySelector('.hero-content a'); // El botón "¡Hablemos!" tiene la etiqueta <a> dentro de .hero-content
+  const hablarBtn = document.querySelector('.hero-content a');
   if (hablarBtn) {
     hablarBtn.addEventListener('click', () => {
-      const slideSound = new Audio('sounds/slide.mp3'); // Ruta de sonido
+      const slideSound = new Audio('sounds/slide.mp3'); //Ruta de sonido boton Hablemos
       slideSound.play();
     });
   }
 
-  const navItems = document.querySelectorAll('.nav-links li'); // Seleccionamos todos los <li> de la barra de navegación
-  const clickSound = new Audio('sounds/click.mp3'); // Ruta del sonido
+  const navItems = document.querySelectorAll('.nav-links li');
+  const clickSound = new Audio('sounds/click.mp3'); //Ruta del sonido botones navbar
 
   navItems.forEach(item => {
     item.addEventListener('click', () => {
-      clickSound.play(); // Reproducir el sonido cuando se haga clic
-    });
-  });
-
-  // Burbujas...
-  const bubbleContainer = document.querySelector('.bubbles');
-  const bubbleGenerationInterval = 100; // Intervalo en milisegundos para la creación de burbujas
-
-  function createBubble() {
-    const bubble = document.createElement('span');
-    bubble.classList.add('bubble');
-
-    const size = Math.random() * 30 + 10; // Variaciones de tamaño
-    bubble.style.width = `${size}px`;
-    bubble.style.height = `${size}px`;
-
-    bubble.style.left = `${Math.random() * 100}%`;
-
-    bubble.style.animationDuration = `${8 + Math.random() * 8}s`;
-    bubble.style.animationDelay = `${Math.random() * 5}s`;
-
-    bubbleContainer.appendChild(bubble);
-
-    setTimeout(() => {
-      bubble.remove();
-    }, 16000);
-  }
-
-  setInterval(createBubble, bubbleGenerationInterval);
-
-  document.addEventListener("mousemove", (e) => {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-
-    const bubbles = document.querySelectorAll(".bubble");
-    bubbles.forEach(bubble => {
-      const bubbleRect = bubble.getBoundingClientRect();
-      const bubbleX = bubbleRect.left + bubbleRect.width / 2;
-      const bubbleY = bubbleRect.top + bubbleRect.height / 2;
-
-      const deltaX = mouseX - bubbleX;
-      const deltaY = mouseY - bubbleY;
-      const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-
-      if (distance < 150) {
-        const directionX = deltaX / distance;
-        const directionY = deltaY / distance;
-
-        const moveDistance = Math.max(10 - distance / 15, 0);
-
-        const computedLeft = parseFloat(getComputedStyle(bubble).left);
-        const computedTop = parseFloat(getComputedStyle(bubble).top);
-
-        bubble.style.left = `${computedLeft - directionX * moveDistance}px`;
-        bubble.style.top = `${computedTop - directionY * moveDistance}px`;
-      }
+      clickSound.play();
     });
   });
 
@@ -120,3 +65,78 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
 });
+
+const canvas = document.getElementById('bubble-canvas');
+const ctx = canvas.getContext('2d');
+
+let bubbles = [];
+const bubbleCount = 150;
+const maxRadius = 15;
+let mouse = { x: null, y: null };
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Crear burbujas
+for (let i = 0; i < bubbleCount; i++) {
+  bubbles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * maxRadius + 2,
+    dx: (Math.random() - 0.5) * 0.8,
+    dy: (Math.random() - 0.5) * 0.8,
+  });
+}
+
+window.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+window.addEventListener('mouseleave', () => {
+  mouse.x = null;
+  mouse.y = null;
+});
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let b of bubbles) {
+    // Movimiento normal
+    b.x += b.dx;
+    b.y += b.dy;
+
+    // Rebote con bordes
+    if (b.x < 0 || b.x > canvas.width) b.dx *= -1;
+    if (b.y < 0 || b.y > canvas.height) b.dy *= -1;
+
+    // Interacción con el mouse
+    if (mouse.x !== null && mouse.y !== null) {
+      const dx = b.x - mouse.x;
+      const dy = b.y - mouse.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const influenceRadius = 100;
+
+      if (dist < influenceRadius) {
+        const angle = Math.atan2(dy, dx);
+        const force = (influenceRadius - dist) / influenceRadius;
+        b.x += Math.cos(angle) * force * 5;
+        b.y += Math.sin(angle) * force * 5;
+      }
+    }
+
+    // Dibujar burbuja
+    ctx.beginPath();
+    ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+    ctx.fill();
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
