@@ -1,18 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    // Modal para envío de email
+  const enviarBtn = document.querySelector('button.copy-btn[data-copy="alexbentancur132@gmail.com"]');
+  const modal = document.getElementById("emailModal");
+  const closeModal = modal.querySelector(".close");
+  const emailForm = document.getElementById("emailForm");
+
+  enviarBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.style.display = "flex";
+    notificationSound.play();
+  });
+
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+// Envío de formulario por EmailJS
+  emailForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      user_name: emailForm.user_name.value,
+      user_email: emailForm.user_email.value,
+      title: emailForm.title.value,
+      message: emailForm.message.value,
+      to_email: "alexbentancur132@gmail.com"
+    };
+
+    emailjs.send('service_yxg6gie', 'template_wih2ono', templateParams)
+      .then(() => {
+        emailForm.reset();
+        modal.style.display = "none";
+        showNotification("¡Email enviado correctamente!");
+      })
+      .catch((error) => {
+        console.error(error);
+        showNotification("Error al enviar el email, intenta nuevamente.");
+      });
+  });
+
   const copyBtns = document.querySelectorAll(".copy-btn");
 
-  copyBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const text = btn.getAttribute("data-copy");
-      navigator.clipboard.writeText(text).then(() => {
+copyBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const text = btn.getAttribute("data-copy");
+    navigator.clipboard.writeText(text).then(() => {
+      if (text === "alexbentancur132@gmail.com") {
+        notificationSound.play();
+      } else {
         btn.textContent = "Copiado!";
         setTimeout(() => {
           btn.textContent = "Copiar";
         }, 2000);
         showNotification("¡Contenido copiado!");
-      });
+      }
     });
   });
+});
 
   const notificationSound = new Audio('sounds/noti.mp3'); //Ruta de sonido
   notificationSound.volume = 0.2; // Volumen de la noti (1 max)

@@ -103,7 +103,7 @@
     <div class="contact-info">
       <p><strong><i class="fas fa-map-marker-alt"></i> Ubicación:</strong> Montevideo, Uruguay</p>
       <p><strong><i class="fas fa-phone"></i> Teléfono:</strong> <span id="telefono">+598 094054266</span> <button class="copy-btn" data-copy="+598 094054266">Copiar</button></p>
-      <p><strong><i class="fas fa-envelope"></i> Email:</strong> <span id="email">alexbentancur132@gmail.com</span> <button class="copy-btn" data-copy="alexbentancur132@gmail.com">Copiar</button></p>
+      <p><strong><i class="fas fa-envelope"></i> Email:</strong> <span id="email">alexbentancur132@gmail.com</span> <button class="copy-btn" data-copy="alexbentancur132@gmail.com">Envíame un email</button></p>
       <p><strong><i class="fas fa-user"></i> Edad:</strong> 22 años</p>
     </div>
   </section>
@@ -113,6 +113,35 @@
   <footer>
     <p>&copy; 2025 Alexander Bentancur - Alequn</p>
   </footer>
+
+<!-- Formulario de Email -->
+<div id="emailModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Envíame un email</h3>
+    <form id="emailForm">
+      <label for="user_name">Nombre:</label>
+      <input type="text" id="user_name" name="user_name" required />
+
+      <label for="user_email">Tu correo:</label>
+      <input type="email" id="user_email" name="user_email" required />
+
+      <label for="title">Titulo de asunto:</label>
+      <input id="title" name="title" required></input>
+
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("zBIMabm4Y3aoMnvHS");
+  </script>
+
 
   <script>
     AOS.init();
