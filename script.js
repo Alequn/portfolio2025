@@ -1,26 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Modal para envío de email
-  const enviarBtn = document.querySelector('button.copy-btn[data-copy="alexbentancur132@gmail.com"]');
   const modal = document.getElementById("emailModal");
-  const closeModal = modal.querySelector(".close");
   const emailForm = document.getElementById("emailForm");
-
-  enviarBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    modal.style.display = "flex";
-    notificationSound.play();
-  });
-
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
+  
+  const enviarBtn = document.querySelector('button.copy-btn[data-copy="alexbentancur132@gmail.com"]');
 
 // Envío de formulario por EmailJS
   emailForm.addEventListener("submit", (e) => {
@@ -37,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     emailjs.send('service_yxg6gie', 'template_wih2ono', templateParams)
       .then(() => {
         emailForm.reset();
-        modal.style.display = "none";
         showNotification("¡Email enviado correctamente!");
       })
       .catch((error) => {
@@ -103,6 +85,15 @@ copyBtns.forEach(btn => {
 
   navItems.forEach(item => {
     item.addEventListener('click', () => {
+      clickSound.play();
+    });
+  });
+
+
+  const buttons = document.querySelectorAll('form button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
       clickSound.play();
     });
   });

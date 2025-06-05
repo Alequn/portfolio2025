@@ -42,14 +42,14 @@
   <section id="inicio" class="hero">
     <div class="hero-content" data-aos="fade-up">
       <h2><span>Hola, soy</span> Alexander Bentancur</h2>
-      <p>Desarrollador web profesional en Montevideo, Uruguay.</p>
+      <p>Desarrollador FullStack JR.</p>
       <a href="#contacto" class="btn-primary">¡Hablemos!</a>
     </div>
   </section>
 
   <section id="sobre-mi" class="section" data-aos="fade-right">
     <h2>Sobre mí</h2>
-    <p>Soy Alexander, también conocido como <strong>Alequn</strong>, un desarrollador web de 22 años especializado en crear experiencias digitales modernas, funcionales y atractivas.</p>
+    <p>Soy Alexander, también conocido como <strong>Alequn</strong>, un desarrollador FullStack especializado en crear experiencias digitales modernas, funcionales y atractivas.</p>
     <p><br>Actualmente formo parte del equipo de desarrollo web en <strong>Movistar Uruguay</strong>, donde contribuyo a optimizar y rediseñar componentes clave del sitio corporativo y herramientas internas.</p>
   </section>
 
@@ -68,9 +68,9 @@
     </div>
   </section>
 
-  <section id="proyectos" class="section" data-aos="fade-up">
-    <h2>Proyectos</h2>
-    <div class="projects">
+  <section id="proyectos" class="section alt-bg">
+    <h2 data-aos="fade-up">Proyectos</h2>
+    <div class="projects" data-aos="fade-up">
       <div class="project">
         <h3>Portafolio Moderno</h3>
         <p>Landing page con React y animaciones usando Framer Motion. Responsive y accesible.</p>
@@ -98,13 +98,37 @@
     </div>
   </section>
 
-  <section id="contacto" class="section alt-bg" data-aos="fade-up">
-    <h2>Contacto</h2>
-    <div class="contact-info">
-      <p><strong><i class="fas fa-map-marker-alt"></i> Ubicación:</strong> Montevideo, Uruguay</p>
-      <p><strong><i class="fas fa-phone"></i> Teléfono:</strong> <span id="telefono">+598 094054266</span> <button class="copy-btn" data-copy="+598 094054266">Copiar</button></p>
-      <p><strong><i class="fas fa-envelope"></i> Email:</strong> <span id="email">alexbentancur132@gmail.com</span> <button class="copy-btn" data-copy="alexbentancur132@gmail.com">Envíame un email</button></p>
-      <p><strong><i class="fas fa-user"></i> Edad:</strong> 22 años</p>
+  <section id="contacto" class="section alt-bg">
+    <div class="contact-container">
+      <!-- Col Izq -->
+      <div class="contact-info">
+        <h2>Contactos</h2>
+        <p><strong style="color: red; font-size: 2rem;">En construccion</strong></p>
+        <p><strong>Teléfono:</strong> +598 094 054 266</p>
+        <p><strong>Ubicación:</strong> Montevideo, Uruguay</p>
+        <div class="redes">
+          <a href="https://github.com/alequn" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/alexander-bentancur/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- Col Der -->
+      <div id="emailModal" class="contact-form">
+
+        <h2>Envíame un email</h2>
+
+        <form id="emailForm">
+          <input type="text" id="user_name" name="user_name" placeholder="Tú nombre" required />
+
+          <input type="email" id="user_email" name="user_email" placeholder="Tú email" required />
+
+          <input type="text" id="title" name="title" placeholder="Título del Asunto" required />
+
+          <textarea id="message" name="message" placeholder="Escribe tú mensaje" required></textarea>
+
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -113,29 +137,6 @@
   <footer>
     <p>&copy; 2025 Alexander Bentancur - Alequn</p>
   </footer>
-
-<!-- Formulario de Email -->
-<div id="emailModal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Envíame un email</h3>
-    <form id="emailForm">
-      <label for="user_name">Nombre:</label>
-      <input type="text" id="user_name" name="user_name" required />
-
-      <label for="user_email">Tu correo:</label>
-      <input type="email" id="user_email" name="user_email" required />
-
-      <label for="title">Titulo de asunto:</label>
-      <input id="title" name="title" required></input>
-
-      <label for="message">Mensaje:</label>
-      <textarea id="message" name="message" required></textarea>
-
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
