@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alequn - Desarrollador Web</title>
+  <link rel="icon" href="./img/logo.png" type="image/png">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -56,17 +57,63 @@
   <section id="habilidades" class="section alt-bg">
     <h2 data-aos="fade-up">Habilidades</h2>
     <div class="skills" data-aos="zoom-in">
-      <div class="skill"><i class="fab fa-html5"></i> HTML5</div>
-      <div class="skill"><i class="fab fa-css3-alt"></i> CSS3 / SASS</div>
-      <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
-      <div class="skill"><i class="fab fa-react"></i> React / Next.js</div>
-      <div class="skill"><i class="fab fa-node-js"></i> Node.js / Express</div>
-      <div class="skill"><i class="fab fa-java"></i> Java</div>      
-      <div class="skill"><i class="fas fa-database"></i> MongoDB / MySQL</div>
-      <div class="skill"><i class="fab fa-git-alt"></i> Git / GitHub</div>
-      <div class="skill"><i class="fas fa-mobile-alt"></i> Diseño Responsivo</div>
+      <div class="skill-card">
+        <div class="skill-inner">
+          <div class="skill-front"><i class="fab fa-html5"></i></div>
+          <div class="skill-back">HTML5</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-inner">
+          <div class="skill-front"><i class="fab fa-css3-alt"></i></div>
+          <div class="skill-back">CSS3 / SASS</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-inner">
+          <div class="skill-front"><i class="fab fa-js"></i></div>
+          <div class="skill-back">JavaScript</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-inner">
+          <div class="skill-front"><i class="fab fa-react"></i></div>
+          <div class="skill-back">React / Next.js</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-inner">
+          <div class="skill-front"><i class="fab fa-node-js"></i></div>
+          <div class="skill-back">Node.js / Express</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-inner">
+          <div class="skill-front"><i class="fab fa-java"></i></div>
+          <div class="skill-back">Java</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-inner">
+          <div class="skill-front"><i class="fas fa-database"></i></div>
+          <div class="skill-back">MongoDB / MySQL</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-inner">
+          <div class="skill-front"><i class="fab fa-git-alt"></i></div>
+          <div class="skill-back">Git / GitHub</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-inner">
+          <div class="skill-front"><i class="fas fa-mobile-alt"></i></div>
+          <div class="skill-back">Diseño Responsivo</div>
+        </div>
+      </div>
     </div>
   </section>
+  
 
   <section id="proyectos" class="section alt-bg">
     <h2 data-aos="fade-up">Proyectos</h2>
@@ -101,19 +148,32 @@
   <section id="contacto" class="section alt-bg">
     <div class="contact-container">
       <!-- Col Izq -->
-      <div class="contact-info">
-        <h2>Contactos</h2>
-        <p><strong style="color: red; font-size: 2rem;">En construccion</strong></p>
-        <p><strong>Teléfono:</strong> +598 094 054 266</p>
-        <p><strong>Ubicación:</strong> Montevideo, Uruguay</p>
-        <div class="redes">
-          <a href="https://github.com/alequn" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/alexander-bentancur/" target="_blank">LinkedIn</a>
+      <div class="contacto-info" data-aos="fade-right">
+        <h2>¡Conectemos!</h2>
+        <p>Podés encontrarme en mis redes sociales:</p>
+      
+        <div class="redes-contacto">
+          <a href="https://www.linkedin.com/in/alexander-bentancur/" class="btn-red" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/alequn" class="btn-red" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://wa.me/59894054266" class="btn-red" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="cv/CV-Alexander-Bentancur.pdf" class="btn-red cv" download>
+            <i class="fas fa-file"></i> Descarga mi CV
+          </a>
+          <a class="btn-red sound-click email" onclick="copiarEmail()">
+            <i class="fas fa-envelope"></i> Copiar email
+          </a>
         </div>
       </div>
+      
 
       <!-- Col Der -->
-      <div id="emailModal" class="contact-form">
+      <div id="emailModal" class="contact-form" data-aos="fade-left">
 
         <h2>Envíame un email</h2>
 

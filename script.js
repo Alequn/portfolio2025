@@ -1,10 +1,31 @@
+const notificationSound = new Audio('sounds/noti.mp3');
+notificationSound.volume = 0.2;
+
+function showNotification(message) {
+  const notification = document.createElement("div");
+  notification.classList.add("notification");
+  notification.textContent = message;
+
+  const container = document.getElementById("notification-container");
+  container.appendChild(notification);
+
+  notificationSound.play();
+
+  setTimeout(() => {
+    notification.classList.add("show");
+  }, 10);
+
+  setTimeout(() => {
+    notification.classList.remove("show");
+    setTimeout(() => {
+      container.removeChild(notification);
+    }, 500);
+  }, 3000);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
-  const modal = document.getElementById("emailModal");
   const emailForm = document.getElementById("emailForm");
-  
-  const enviarBtn = document.querySelector('button.copy-btn[data-copy="alexbentancur132@gmail.com"]');
-
 // Envío de formulario por EmailJS
   emailForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -28,75 +49,36 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  const copyBtns = document.querySelectorAll(".copy-btn");
-
-copyBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const text = btn.getAttribute("data-copy");
-    navigator.clipboard.writeText(text).then(() => {
-      if (text === "alexbentancur132@gmail.com") {
-        notificationSound.play();
-      } else {
-        btn.textContent = "Copiado!";
-        setTimeout(() => {
-          btn.textContent = "Copiar";
-        }, 2000);
-        showNotification("¡Contenido copiado!");
-      }
-    });
-  });
-});
-
-  const notificationSound = new Audio('sounds/noti.mp3'); //Ruta de sonido
-  notificationSound.volume = 0.2; // Volumen de la noti (1 max)
-
-  function showNotification(message) {
-    const notification = document.createElement("div");
-    notification.classList.add("notification");
-    notification.textContent = message;
-
-    const container = document.getElementById("notification-container");
-    container.appendChild(notification);
-
-    notificationSound.play();
-
-    setTimeout(() => {
-      notification.classList.add("show");
-    }, 10);
-
-    setTimeout(() => {
-      notification.classList.remove("show");
-      setTimeout(() => {
-        container.removeChild(notification);
-      }, 500);
-    }, 3000);
-  }
-
-  const hablarBtn = document.querySelector('.hero-content a');
-  if (hablarBtn) {
-    hablarBtn.addEventListener('click', () => {
-      const slideSound = new Audio('sounds/slide.mp3'); //Ruta de sonido boton Hablemos
-      slideSound.play();
-    });
-  }
-
+  const hablemosButton = document.querySelectorAll('.hero-content a');
   const navItems = document.querySelectorAll('.nav-links li');
-  const clickSound = new Audio('sounds/click.mp3'); //Ruta del sonido botones navbar
+  const formButtons = document.querySelectorAll('form button');
+  const contactButtons = document.querySelectorAll('.redes-contacto a');
 
-  navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      clickSound.play();
+  const clickSound = new Audio('sounds/click.mp3');
+  const slideSound = new Audio('sounds/slide.mp3');
+
+  const buttonSoundClick = [...navItems, ...formButtons, ...contactButtons,];
+  const buttonSoundSlide = [...hablemosButton];
+
+  if (buttonSoundClick) {
+
+    buttonSoundClick.forEach(item => {
+      item.addEventListener('click', () => {
+        clickSound.play();
+      });
+
     });
-  });
+  }
+  
+  if (buttonSoundSlide) {
 
-
-  const buttons = document.querySelectorAll('form button');
-
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      clickSound.play();
-    });
-  });
+    buttonSoundSlide.forEach(item => {
+      item.addEventListener('click', () =>{
+        slideSound.play();
+      })
+    })
+    
+  }
 
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.querySelector(".nav-links");
@@ -182,3 +164,19 @@ function animate() {
 
 animate();
 
+const contactNotis = document.querySelectorAll('.redes-contacto a');
+
+contactNotis.forEach(item => {
+
+  item.addEventListener('click', () => {
+    if (item.classList.contains('cv')) {
+
+      showNotification("¡CV descargado!");
+
+    } else if (item.classList.contains('email')) {
+
+      showNotification("¡Email copiado!");
+
+    }
+  });
+});
