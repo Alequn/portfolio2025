@@ -1,0 +1,16 @@
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #2e2e3f;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.project:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}

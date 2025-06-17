@@ -1,0 +1,71 @@
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+    }
+
+    nav ul li {
+        padding: 12px 16px;
+    }
+
+    .contact-info p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .copy-btn {
+        width: 100%;
+        max-width: 100px;
+        color: black;
+    }
+    
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        justify-items: center;
+    }
+
+    .skill-card {
+        width: 160px;
+        height: 160px;
+    }
+
+    .skill-front,
+    .skill-back {
+        font-size: 2.5rem;
+    }
+
+    .skill-back {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .skills {
+        gap: 1.5rem;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}

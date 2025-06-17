@@ -1,0 +1,84 @@
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.skill {
+    background: #333c56;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #fff;
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.skill i {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    background: #444a66;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.skill-card {
+    width: 160px;
+    height: 160px;
+    perspective: 1000px;
+}
+
+.skill-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.skill-card:hover .skill-inner {
+    transform: rotateY(180deg);
+}
+
+.skill-front,
+.skill-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+.skill-front {
+    background: var(--card-bg, rgba(255, 255, 255, 0.05));
+    color: var(--accent-color, #00ffff);
+}
+
+.skill-back {
+    transform: rotateY(180deg);
+    font-size: 1.1rem;
+    padding: 1rem;
+    text-align: center;
+    background: var(--highlight-bg, #222);
+    color: var(--highlight-text, #fff);
+}

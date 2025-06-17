@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alequn.github.io/portfolio2025/sitemap.xml
