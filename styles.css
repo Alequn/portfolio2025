@@ -19,6 +19,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-dark);
@@ -32,9 +37,11 @@ a {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
 
 .navbar {
@@ -312,87 +319,87 @@ section {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-  }
+}
 
 html {
     scroll-behavior: smooth;
 }
 
 .contact-section {
-  padding: 4rem 0;
+    padding: 4rem 0;
 }
 
 .contact-container {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .contact-info,
 .contact-form {
-  flex: 1;
-  min-width: 300px;
+    flex: 1;
+    min-width: 300px;
 }
 
 .contact-info {
-  text-align: left;
+    text-align: left;
 }
 
 .contact-form {
-  text-align: right;
+    text-align: right;
 }
 
 .contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .contact-form label {
-  align-self: flex-start;
-  font-weight: 500;
-  margin: -20px;
+    align-self: flex-start;
+    font-weight: 500;
+    margin: -20px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  max-width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: inherit;
-  margin: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    margin: 0;
 }
 
 .contact-form button {
-  align-self: center;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    align-self: center;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .contact-form button:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 .redes a {
-  display: inline-block;
-  margin-right: 1rem;
-  color: #007bff;
-  text-decoration: none;
+    display: inline-block;
+    margin-right: 1rem;
+    color: #007bff;
+    text-decoration: none;
 }
 
 .redes a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .contacto-info {
@@ -400,26 +407,26 @@ html {
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-  }
-  
-  .contacto-info h2 {
+}
+
+.contacto-info h2 {
     font-size: 2rem;
     margin-bottom: 10px;
-  }
-  
-  .contacto-info p {
+}
+
+.contacto-info p {
     font-size: 1.1rem;
     margin-bottom: 20px;
     color: #ccc;
-  }
-  
-  .redes-contacto {
+}
+
+.redes-contacto {
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
-  
-  .btn-red {
+}
+
+.btn-red {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -430,42 +437,41 @@ html {
     text-decoration: none;
     transition: background 0.3s, transform 0.2s;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  }
-  
-  .btn-red:hover {
+}
+
+.btn-red:hover {
     background: rgba(255, 255, 255, 0.15);
     transform: scale(1.05);
-  }
-  
+}
 
-  .skills {
+.skills {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
     margin-top: 2rem;
-  }
-  
-  .skill-card {
+}
+
+.skill-card {
     width: 160px;
     height: 160px;
     perspective: 1000px;
-  }
-  
-  .skill-inner {
+}
+
+.skill-inner {
     width: 100%;
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
-  }
-  
-  .skill-card:hover .skill-inner {
+}
+
+.skill-card:hover .skill-inner {
     transform: rotateY(180deg);
-  }
-  
-  .skill-front,
-  .skill-back {
+}
+
+.skill-front,
+.skill-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -478,22 +484,21 @@ html {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
     background: var(--main-bg-color);
     color: var(--main-text-color);
-  }
-  
-  .skill-front {
+}
+
+.skill-front {
     background: var(--card-bg, rgba(255, 255, 255, 0.05));
     color: var(--accent-color, #00ffff);
-  }
-  
-  .skill-back {
+}
+
+.skill-back {
     transform: rotateY(180deg);
     font-size: 1.1rem;
     padding: 1rem;
     text-align: center;
     background: var(--highlight-bg, #222);
     color: var(--highlight-text, #fff);
-  }
-  
+}
 
 @media (max-width: 768px) {
     .hamburger {
@@ -520,27 +525,30 @@ html {
         max-width: 100px;
         color: black;
     }
-    .skills {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-      }
     
-      .skill-card {
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        justify-items: center;
+    }
+
+    .skill-card {
         width: 160px;
         height: 160px;
-      }
-    
-      .skill-front,
-      .skill-back {
+    }
+
+    .skill-front,
+    .skill-back {
         font-size: 2.5rem;
-      }
-    
-      .skill-back {
+    }
+
+    .skill-back {
         font-size: 1.1rem;
         padding: 1rem;
-      }
+    }
 }
+
 
 @media (max-width: 480px) {
     .hero h2 {
@@ -553,7 +561,7 @@ html {
 
     .skills {
         gap: 1.5rem;
-      }
+    }
 
     .projects {
         grid-template-columns: 1fr;
