@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Portafolio Moderno",
+    "description": "Landing page con React y animaciones usando Framer Motion. Responsive y accesible."
+  },
+  {
+    "title": "App de Tareas",
+    "description": "To-do app con autenticación Firebase y Vue.js. UI elegante y funcionalidad offline."
+  },
+  {
+    "title": "Clon de Spotify",
+    "description": "Clon con reproductor interactivo en React y consumo de la API pública de Spotify."
+  },
+  {
+    "title": "Dashboard de Ventas",
+    "description": "Panel administrativo con estadísticas dinámicas, gráficos y autenticación con JWT."
+  },
+  {
+    "title": "API REST de Usuarios",
+    "description": "Back-end con Node.js, Express y MongoDB. Incluye validaciones, login y permisos."
+  },
+  {
+    "title": "Blog con CMS Headless",
+    "description": "Blog dinámico con Next.js, consumo desde Contentful y optimizado para SEO."
+  }
+]

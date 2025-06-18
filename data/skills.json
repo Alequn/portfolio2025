@@ -1,0 +1,12 @@
+[
+  { "skill": "HTML5", "icon": "fab fa-html5" },
+  { "skill": "CSS3 / SASS", "icon": "fab fa-css3-alt" },
+  { "skill": "JavaScript", "icon": "fab fa-js" },
+  { "skill": "React / Next.js", "icon": "fab fa-react" },
+  { "skill": "Node.js / Express", "icon": "fab fa-node-js" },
+  { "skill": "Java", "icon": "fab fa-java" },
+  { "skill": "MongoDB / MySQL", "icon": "fas fa-database" },
+  { "skill": "Git / GitHub", "icon": "fab fa-git-alt" },
+  { "skill": "ABTasty", "icon": "fas fa-flask" },
+  { "skill": "Diseño Responsivo", "icon": "fas fa-mobile-alt" }
+]

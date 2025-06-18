@@ -42,7 +42,13 @@
   <link rel="stylesheet" href="./styles/contact.css">
   <link rel="stylesheet" href="./styles/mobile.css">
 
-  <script defer src="script.js"></script>
+  <!-- Importaciones js -->
+  <script src="./scripts/notifications.js"></script>
+  <script src="./scripts/general.js"></script>
+  <script src="./scripts/skills.js"></script>
+  <script src="./scripts/projects.js"></script>
+  <script src="./scripts/bubbles.js"></script>
+
 </head>
 <body>
 
@@ -84,93 +90,13 @@
 
   <section id="habilidades" class="section alt-bg">
     <h2 data-aos="fade-up">Habilidades</h2>
-    <div class="skills" data-aos="zoom-in">
-      <div class="skill-card">
-        <div class="skill-inner">
-          <div class="skill-front"><i class="fab fa-html5"></i></div>
-          <div class="skill-back">HTML5</div>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-inner">
-          <div class="skill-front"><i class="fab fa-css3-alt"></i></div>
-          <div class="skill-back">CSS3 / SASS</div>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-inner">
-          <div class="skill-front"><i class="fab fa-js"></i></div>
-          <div class="skill-back">JavaScript</div>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-inner">
-          <div class="skill-front"><i class="fab fa-react"></i></div>
-          <div class="skill-back">React / Next.js</div>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-inner">
-          <div class="skill-front"><i class="fab fa-node-js"></i></div>
-          <div class="skill-back">Node.js / Express</div>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-inner">
-          <div class="skill-front"><i class="fab fa-java"></i></div>
-          <div class="skill-back">Java</div>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-inner">
-          <div class="skill-front"><i class="fas fa-database"></i></div>
-          <div class="skill-back">MongoDB / MySQL</div>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-inner">
-          <div class="skill-front"><i class="fab fa-git-alt"></i></div>
-          <div class="skill-back">Git / GitHub</div>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-inner">
-          <div class="skill-front"><i class="fas fa-mobile-alt"></i></div>
-          <div class="skill-back">Diseño Responsivo</div>
-        </div>
-      </div>
-    </div>
+    <div id="skills-container" class="skills" data-aos="zoom-in"></div>
   </section>
   
 
   <section id="proyectos" class="section alt-bg">
     <h2 data-aos="fade-up">Proyectos</h2>
-    <div class="projects" data-aos="fade-up">
-      <div class="project">
-        <h3>Portafolio Moderno</h3>
-        <p>Landing page con React y animaciones usando Framer Motion. Responsive y accesible.</p>
-      </div>
-      <div class="project">
-        <h3>App de Tareas</h3>
-        <p>To-do app con autenticación Firebase y Vue.js. UI elegante y funcionalidad offline.</p>
-      </div>
-      <div class="project">
-        <h3>Clon de Spotify</h3>
-        <p>Clon con reproductor interactivo en React y consumo de la API pública de Spotify.</p>
-      </div>
-      <div class="project">
-        <h3>Dashboard de Ventas</h3>
-        <p>Panel administrativo con estadísticas dinámicas, gráficos y autenticación con JWT.</p>
-      </div>
-      <div class="project">
-        <h3>API REST de Usuarios</h3>
-        <p>Back-end con Node.js, Express y MongoDB. Incluye validaciones, login y permisos.</p>
-      </div>
-      <div class="project">
-        <h3>Blog con CMS Headless</h3>
-        <p>Blog dinámico con Next.js, consumo desde Contentful y optimizado para SEO.</p>
-      </div>
-    </div>
+    <div id="projects-container" class="projects" data-aos="fade-up"></div>
   </section>
 
   <section id="contacto" class="section alt-bg">
@@ -193,7 +119,7 @@
           <a href="cv/CV-Alexander-Bentancur.pdf" class="btn-red cv" download>
             <i class="fas fa-file"></i> Descarga mi CV
           </a>
-          <a class="btn-red sound-click email" onclick="copiarEmail()">
+          <a class="btn-red sound-click email">
             <i class="fas fa-envelope"></i> Copiar email
           </a>
         </div>
