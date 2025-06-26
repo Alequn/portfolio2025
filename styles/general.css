@@ -58,7 +58,7 @@ a {
     padding: 20px;
 }
 
-.hero h2 {
+.hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: #ffffff;
@@ -69,7 +69,10 @@ a {
     color: #fff700;
     display: block;
     font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
+
 
 .hero p {
     font-size: 1.2rem;
